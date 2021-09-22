@@ -65,7 +65,10 @@ BuildRequires:  golang(google.golang.org/protobuf/types/known/wrapperspb)
 %goprep
 
 %build
-%gobuild -o %{gobuilddir}/cmd/grpcurl %{goipath}
+for cmd in cmd/* ; do
+  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
+done
+
 
 %install
 %gopkginstall
