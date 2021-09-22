@@ -14,7 +14,7 @@ Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers.}
 %global godocs          README.md releasing/RELEASE_NOTES.md\\\
                         releasing/README.md
 
-Name:           %{goname}
+Name:           grpcurl
 Release:        1%{?dist}
 Summary:        Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
