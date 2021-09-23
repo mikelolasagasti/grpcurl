@@ -23,7 +23,6 @@ Summary:        Reflection (Rich Descriptors) for Go Protocol Buffers
 License:        ASL 2.0
 URL:            %{gourl}
 Source0:        %{gosource}
-Patch0001:     0001-protoreflect-skip-test-that-fails.patch
 
 BuildRequires:  golang(github.com/golang/protobuf/jsonpb)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
@@ -62,14 +61,13 @@ BuildRequires:  golang(google.golang.org/grpc/reflection)
 
 %prep
 %goprep
-%patch0001 -p1
 
 %install
 %gopkginstall
 
 %if %{with check}
 %check
-%gocheck
+%gocheck -d desc/builder -d desc/protoparse
 %endif
 
 %gopkgfiles
