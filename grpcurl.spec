@@ -90,4 +90,3 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %changelog
 * Wed Sep 22 2021 Mikel Olasagasti Uranga <mikel@olasagasti.info> - 1.8.2-1
 - Initial package
-
