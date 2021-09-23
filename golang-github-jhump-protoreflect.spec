@@ -11,9 +11,7 @@ Version:                1.9.0
 Reflection (Rich Descriptors) for Go Protocol Buffers.}
 
 %global golicenses      LICENSE
-%global godocs          README.md desc/protoparse/test-source-info.txt\\\
-                        desc/protoprint/testfiles/test-non-files-full.txt\\\
-                        desc/protoprint/testfiles/test-non-files-compact.txt
+%global godocs          README.md
 
 Name:           %{goname}
 Release:        1%{?dist}
