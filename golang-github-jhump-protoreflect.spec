@@ -3,7 +3,7 @@
 
 # https://github.com/jhump/protoreflect
 %global goipath         github.com/jhump/protoreflect
-Version:                1.9.0
+Version:                1.10.1
 
 %gometa
 
@@ -14,7 +14,7 @@ Reflection (Rich Descriptors) for Go Protocol Buffers.}
 %global godocs          README.md
 
 Name:           %{goname}
-Release:        1%{?dist}
+Release:        %autorelease
 Summary:        Reflection (Rich Descriptors) for Go Protocol Buffers
 
 # Upstream license specification: Apache-2.0
@@ -65,12 +65,11 @@ BuildRequires:  golang(google.golang.org/grpc/reflection)
 
 %if %{with check}
 %check
-%gocheck -d desc/builder -d desc/protoparse
+#%%gocheck -d desc/builder -d desc/protoparse
+%gocheck
 %endif
 
 %gopkgfiles
 
 %changelog
-* Wed Sep 22 2021 Mikel Olasagasti Uranga <mikel@olasagasti.info> - 1.9.0-1
-- Initial package
-
+%autochangelog
