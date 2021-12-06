@@ -3,7 +3,7 @@
 
 # https://github.com/fullstorydev/grpcurl
 %global goipath         github.com/fullstorydev/grpcurl
-Version:                1.8.2
+Version:                1.8.5
 
 %gometa
 
@@ -11,11 +11,10 @@ Version:                1.8.2
 Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers.}
 
 %global golicenses      LICENSE
-%global godocs          README.md releasing/RELEASE_NOTES.md\\\
-                        releasing/README.md
+%global godocs          README.md
 
 Name:           grpcurl
-Release:        1%{?dist}
+Release:        %autorelease
 Summary:        Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
 License:        MIT
@@ -65,15 +64,12 @@ BuildRequires:  golang(google.golang.org/protobuf/types/known/wrapperspb)
 %goprep
 
 %build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
-
+%gobuild -o %{gobuilddir}/cmd/%{name} %{goipath}/cmd/%{name}
 
 %install
 %gopkginstall
 install -m 0755 -vd                     %{buildroot}%{_bindir}
-install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+install -m 0755 -vp %{gobuilddir}/cmd/* %{buildroot}%{_bindir}/
 
 %if %{with check}
 %check
@@ -82,11 +78,10 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc README.md releasing/RELEASE_NOTES.md releasing/README.md
+%doc README.md
 %{_bindir}/*
 
 %gopkgfiles
 
 %changelog
-* Wed Sep 22 2021 Mikel Olasagasti Uranga <mikel@olasagasti.info> - 1.8.2-1
-- Initial package
+%autochangelog
