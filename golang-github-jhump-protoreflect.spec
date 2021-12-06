@@ -65,7 +65,7 @@ BuildRequires:  golang(google.golang.org/grpc/reflection)
 
 %if %{with check}
 %check
-%gocheck -d desc/builder
+%gocheck -d desc/builder -d desc/protoparse
 %endif
 
 %gopkgfiles
