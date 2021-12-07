@@ -7,13 +7,15 @@ Version:                1.8.5
 
 %gometa
 
+%global goname grpcurl
+
 %global common_description %{expand:
 Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers.}
 
 %global golicenses      LICENSE
 %global godocs          README.md
 
-Name:           grpcurl
+Name:           %{goname}
 Release:        %autorelease
 Summary:        Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
