@@ -3,7 +3,7 @@
 
 # https://github.com/fullstorydev/grpcurl
 %global goipath         github.com/fullstorydev/grpcurl
-Version:                1.8.5
+Version:                1.8.6
 
 %gometa
 
@@ -25,7 +25,6 @@ Source0:        %{gosource}
 
 BuildRequires:  golang(github.com/golang/protobuf/jsonpb)
 BuildRequires:  golang(github.com/golang/protobuf/proto)
-BuildRequires:  golang(github.com/golang/protobuf/ptypes)
 BuildRequires:  golang(github.com/golang/protobuf/ptypes/empty)
 BuildRequires:  golang(github.com/jhump/protoreflect/desc)
 BuildRequires:  golang(github.com/jhump/protoreflect/desc/protoparse)
@@ -36,6 +35,7 @@ BuildRequires:  golang(github.com/jhump/protoreflect/grpcreflect)
 BuildRequires:  golang(google.golang.org/grpc)
 BuildRequires:  golang(google.golang.org/grpc/codes)
 BuildRequires:  golang(google.golang.org/grpc/credentials)
+BuildRequires:  golang(google.golang.org/grpc/credentials/insecure)
 BuildRequires:  golang(google.golang.org/grpc/encoding/gzip)
 BuildRequires:  golang(google.golang.org/grpc/grpclog)
 BuildRequires:  golang(google.golang.org/grpc/keepalive)
